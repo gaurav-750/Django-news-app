@@ -12,10 +12,12 @@ class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
     list_display = ['email', 'username', 'age', 'is_staff']
+    # *specifies the fields used for editing users
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields': ('age',)}),
     )
 
+    # # *specifies the fields used in adding users
     add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {'fields': ('age',)}),
     )
