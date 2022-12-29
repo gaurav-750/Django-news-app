@@ -14,5 +14,6 @@ class Article(models.Model):
         return self.title
 
     # *this tells django where to go when the new instance of this model is created:
+    # So whenever, a new article is created, user'll be redirected to details page
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"pk": self.id})
